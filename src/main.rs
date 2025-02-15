@@ -1,8 +1,10 @@
 mod models;
 
-use crossterm::event::{Event, EventStream, KeyCode};
-use crossterm::execute;
-use crossterm::terminal::{EnterAlternateScreen, LeaveAlternateScreen};
+use crossterm::{
+    event::{Event, EventStream, KeyCode},
+    execute,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen},
+};
 use futures::StreamExt;
 use itertools::Itertools as _;
 use models::{Branch, Mergeable, PullRequest};
@@ -11,12 +13,17 @@ use ratatui::{
     widgets::{Block, Cell, Row, Table, TableState},
 };
 use std::{collections::HashMap, time::Duration};
-use tokio::process::Command as AsyncCommand; // Import for async command
-use tokio::sync::broadcast;
-use tokio::task::JoinSet;
+use tokio::{
+    process::Command as AsyncCommand,
+    sync::broadcast,
+    task::JoinSet,
+    time::{interval, MissedTickBehavior},
+};
 
 const REPO_OWNER: &str = "whamcloud";
 const REPO_NAME: &str = "exascaler-management-framework";
+const TICK_INTERVAL: Duration = Duration::from_millis(50);
+const AUTO_UPDATE: Duration = Duration::from_secs(60);
 
 #[derive(Debug, Clone, Default)]
 struct AppState {
@@ -42,8 +49,6 @@ enum AppEvent {
 }
 
 impl App {
-    const TICK_INTERVAL: Duration = Duration::from_millis(50); // 10 FPS
-
     fn new() -> Self {
         let (sender, receiver) = broadcast::channel(32);
         Self {
@@ -60,8 +65,11 @@ impl App {
         mut self,
         terminal: &mut Terminal<impl Backend>,
     ) -> Result<(), Box<dyn std::error::Error>> {
-        let mut interval = tokio::time::interval(Self::TICK_INTERVAL);
-        interval.set_missed_tick_behavior(tokio::time::MissedTickBehavior::Skip);
+        let mut refresh = interval(TICK_INTERVAL);
+        refresh.set_missed_tick_behavior(MissedTickBehavior::Skip);
+
+        let mut auto_update = interval(AUTO_UPDATE);
+        auto_update.set_missed_tick_behavior(MissedTickBehavior::Skip);
 
         let mut events = EventStream::new();
         self.fetch_prs();
@@ -69,7 +77,8 @@ impl App {
 
         while !self.done {
             tokio::select! {
-                _ = interval.tick() => self.draw(terminal)?,
+                _ = refresh.tick() => self.draw(terminal)?,
+                _ = auto_update.tick() => self.fetch_prs(),
                 Some(Ok(event)) = events.next() =>  self.handle_term_event(&event),
                 Ok(app_event) = self.receiver.recv() => self.handle_app_event(app_event),
             }
