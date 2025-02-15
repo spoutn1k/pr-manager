@@ -1,5 +1,6 @@
 mod models;
 
+use clap::Parser;
 use crossterm::{
     event::{Event, EventStream, KeyCode},
     execute,
@@ -7,7 +8,7 @@ use crossterm::{
 };
 use futures::StreamExt;
 use itertools::Itertools as _;
-use models::{Branch, Mergeable, PullRequest};
+use models::{Branch, Mergeable, PullRequest, Repo};
 use ratatui::{
     prelude::*,
     widgets::{Block, Cell, Row, Table, TableState},
@@ -20,8 +21,6 @@ use tokio::{
     time::{interval, MissedTickBehavior},
 };
 
-const REPO_OWNER: &str = "whamcloud";
-const REPO_NAME: &str = "exascaler-management-framework";
 const TICK_INTERVAL: Duration = Duration::from_millis(50);
 const AUTO_UPDATE: Duration = Duration::from_secs(60);
 
@@ -30,12 +29,13 @@ struct AppState {
     prs: Vec<PullRequest>,
     branches: HashMap<String, String>,
     error_message: Option<String>,
+    done: bool,
 }
 
 struct App {
-    done: bool,
     receiver: broadcast::Receiver<AppEvent>,
     sender: broadcast::Sender<AppEvent>,
+    repo: String,
     state: AppState,
     table_state: TableState,
     tasks: JoinSet<()>,
@@ -48,13 +48,20 @@ enum AppEvent {
     Error(String),
 }
 
+#[derive(Parser)]
+struct Cli {
+    #[clap(short = 'R', long)]
+    repo: Option<String>,
+}
+
 impl App {
-    fn new() -> Self {
+    fn new(repo: String) -> Self
+where {
         let (sender, receiver) = broadcast::channel(32);
         Self {
-            done: false,
             sender,
             receiver,
+            repo,
             state: AppState::default(),
             table_state: TableState::default(),
             tasks: JoinSet::new(),
@@ -75,7 +82,7 @@ impl App {
         self.fetch_prs();
         self.fetch_last_commit("master");
 
-        while !self.done {
+        while !self.state.done {
             tokio::select! {
                 _ = refresh.tick() => self.draw(terminal)?,
                 _ = auto_update.tick() => self.fetch_prs(),
@@ -185,18 +192,19 @@ impl App {
 
         let sender = self.sender.clone();
         let number = pr.number.to_string();
+        let repo = self.repo.clone();
 
         self.tasks.spawn(async move {
-            match AsyncCommand::new("gh")
+            let mut command = AsyncCommand::new("gh");
+            command
                 .arg("pr")
                 .arg("update-branch")
                 .arg("--rebase")
                 .arg("-R")
-                .arg(format!("{REPO_OWNER}/{REPO_NAME}"))
-                .arg(number)
-                .output()
-                .await
-            {
+                .arg(repo)
+                .arg(number);
+
+            match command.output().await {
                 Ok(status) if !status.status.success() => {
                     let _ = sender.send(AppEvent::Error(
                         String::from_utf8_lossy(&status.stderr).into(),
@@ -213,8 +221,10 @@ impl App {
     fn fetch_last_commit(&mut self, branch: &str) {
         let sender = self.sender.clone();
         let branch = branch.to_owned();
+        let repo = self.repo.clone();
+
         self.tasks.spawn(async move {
-            let commit = fetch_last_branch_commit(&format!("{REPO_OWNER}/{REPO_NAME}"), &branch)
+            let commit = fetch_last_branch_commit(&repo, &branch)
                 .await
                 .unwrap_or_default();
             let _ = sender.send(AppEvent::FetchedBranchCommit(branch, commit));
@@ -223,10 +233,10 @@ impl App {
 
     fn fetch_prs(&mut self) {
         let sender = self.sender.clone();
+        let repo = self.repo.to_string();
+
         self.tasks.spawn(async move {
-            let prs = fetch_prs(&format!("{REPO_OWNER}/{REPO_NAME}"))
-                .await
-                .unwrap_or_default();
+            let prs = fetch_prs(&repo).await.unwrap_or_default();
             let _ = sender.send(AppEvent::FetchedPRs(prs));
         });
     }
@@ -239,7 +249,7 @@ impl App {
                 }
 
                 KeyCode::Char('q') | KeyCode::Char('Q') => {
-                    self.done = true;
+                    self.state.done = true;
                 }
 
                 KeyCode::Up => {
@@ -346,14 +356,39 @@ pub async fn fetch_last_branch_commit(
     Ok(branch.commit.sha)
 }
 
+pub async fn fetch_current_repo() -> Result<String, Box<dyn std::error::Error>> {
+    let output = AsyncCommand::new("gh")
+        .arg("repo")
+        .arg("view")
+        .arg("--json")
+        .arg("name,owner")
+        .output()
+        .await?;
+
+    if !output.status.success() {
+        let err_msg = String::from_utf8_lossy(&output.stderr);
+        return Err(format!("gh command failed: {}", err_msg).into());
+    }
+
+    let json_str = String::from_utf8(output.stdout)?;
+
+    let data: Repo = serde_json::from_str(&json_str)?;
+
+    Ok(format!("{}/{}", data.owner.login, data.name))
+}
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let args = Cli::parse();
+
+    let repo = if let Some(repo) = args.repo {
+        repo
+    } else {
+        fetch_current_repo().await?
+    };
+
     let mut terminal = setup_terminal()?;
-
-    let app = App::new();
-
-    app.run(&mut terminal).await?;
-
+    App::new(repo).run(&mut terminal).await?;
     restore_terminal(terminal)?;
     Ok(())
 }

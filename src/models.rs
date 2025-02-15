@@ -59,3 +59,14 @@ pub struct Commit {
     pub sha: String,
     pub url: String,
 }
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+pub struct Owner {
+    pub login: String,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+pub struct Repo {
+    pub name: String,
+    pub owner: Owner,
+}
