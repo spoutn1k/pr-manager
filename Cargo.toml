@@ -2,6 +2,8 @@
 name = "pr-manager"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "A GitHub PR manager"
 
 [dependencies]
 clap = { version = "4.5.29", features = ["derive"] }
