@@ -46,6 +46,16 @@ pub struct PullRequest {
     pub base_commit: String,
     #[serde(default, rename = "isDraft")]
     pub draft: bool,
+    #[serde(default, rename = "statusCheckRollup")]
+    pub checks: Vec<CheckData>,
+}
+
+impl PullRequest {
+    fn checks_passed(&self) -> bool {
+        self.checks
+            .iter()
+            .any(|c| c.status() == CheckStatus::Failure)
+    }
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -69,4 +79,54 @@ pub struct Owner {
 pub struct Repo {
     pub name: String,
     pub owner: Owner,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq)]
+pub enum CheckStatus {
+    #[serde(rename = "SUCCESS")]
+    Success,
+    #[serde(rename = "FAILURE")]
+    Failure,
+    #[serde(rename = "SKIPPED")]
+    Skipped,
+    #[serde(rename = "")]
+    Unknown,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+#[serde(tag = "__typename")]
+pub enum CheckData {
+    CheckRun {
+        name: String,
+        conclusion: CheckStatus,
+    },
+    StatusContext {
+        context: String,
+        state: CheckStatus,
+        #[serde(rename = "targetUrl")]
+        target_url: String,
+    },
+}
+
+impl CheckData {
+    pub fn name(&self) -> &str {
+        match self {
+            CheckData::CheckRun { name, .. } => name,
+            CheckData::StatusContext { context, .. } => context,
+        }
+    }
+
+    pub fn status(&self) -> CheckStatus {
+        match self {
+            CheckData::CheckRun { conclusion, .. } => conclusion.clone(),
+            CheckData::StatusContext { state, .. } => state.clone(),
+        }
+    }
+}
+
+#[test]
+fn test_parse_json() {
+    let prs: Vec<PullRequest> = serde_json::from_str(include_str!("fixtures/full.json")).unwrap();
+
+    insta::assert_debug_snapshot!(prs);
 }

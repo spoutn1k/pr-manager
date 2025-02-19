@@ -316,7 +316,7 @@ pub async fn fetch_prs(repo: &str) -> Result<Vec<PullRequest>, Box<dyn std::erro
         .arg("--author")
         .arg("@me")
         .arg("--json")
-        .arg("number,title,mergeable,headRefName,baseRefName,baseRefOid,isDraft,url")
+        .arg("number,title,mergeable,headRefName,baseRefName,baseRefOid,isDraft,url,statusCheckRollup")
         .arg("-R")
         .arg(repo)
         .output()

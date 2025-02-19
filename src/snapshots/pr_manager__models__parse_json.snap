@@ -1,0 +1,2666 @@
+---
+source: src/models.rs
+expression: prs
+---
+[
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3906",
+        id: 0,
+        node_id: "",
+        number: 3906,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-418: Add constraint on kdump stonith",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EHT-418-kdump-constraint",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3906",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3906",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3904",
+        id: 0,
+        node_id: "",
+        number: 3904,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "Remove exploded configuration from STONITH rule generation",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EHT-418-primitive-tuning",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Failure,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3904",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3904",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3880",
+        id: 0,
+        node_id: "",
+        number: 3880,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-397: Prevent silent key updating",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EHT-397-key-overriding",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3880",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3880",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3863",
+        id: 0,
+        node_id: "",
+        number: 3863,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-47 Multitenancy global option",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EHT-47-toml-multitenancy",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3863",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3863",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3817",
+        id: 0,
+        node_id: "",
+        number: 3817,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-191 Auto SFA password resolution",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EX-9526-use-sfa-password",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Failure,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3817",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3817",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3740",
+        id: 0,
+        node_id: "",
+        number: 3740,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-190: Refactor configuration automations",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/refactor-toml-autocorrect",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3740",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3740",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3734",
+        id: 0,
+        node_id: "",
+        number: 3734,
+        state: "",
+        mergeable: Conflict,
+        locked: false,
+        title: "EHT-82: Fix indicatif usage",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EHT-82-indicatif-refactor",
+        base_name: "master",
+        base_commit: "da0724a4e607ffef375d5a456fa27164be5fcca1",
+        draft: true,
+        checks: [
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Overflow Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Unwrap Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Failure,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3734",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3734",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3690",
+        id: 0,
+        node_id: "",
+        number: 3690,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-267: Add warning when defined passwords clash with policy",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EX-11012-ipmi-password-conflict",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: true,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Failure,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Failure,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3564",
+        id: 0,
+        node_id: "",
+        number: 3564,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "EHT-270 Configuration parameter `ksocklnd skip_mr_route_setup` warning",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/EX-10737-mr-interference-warning",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: false,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3564",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3564",
+            },
+        ],
+    },
+    PullRequest {
+        url: "https://github.com/whamcloud/exascaler-management-framework/pull/3553",
+        id: 0,
+        node_id: "",
+        number: 3553,
+        state: "",
+        mergeable: Ok,
+        locked: false,
+        title: "Update es-vagrant developer documentation",
+        body: None,
+        created_at: "",
+        updated_at: "",
+        closed_at: None,
+        merged_at: None,
+        branch: "spoutn1k/vagrant-notes",
+        base_name: "master",
+        base_commit: "2c3ac1bf32c690c735740d470c002509c1583708",
+        draft: true,
+        checks: [
+            CheckRun {
+                name: "GUI cargo check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI clippy check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "markdown-link-check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Clippy",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_manager_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI rustfmt check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Migrations",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / el8_agent_rpm",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI cargo test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check for unused cargo dependencies",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "GUI Firefox Headless Test",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Format",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Rocky 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Black",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 8 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Timings",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / RHEL 9 RPM build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Upgrade Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / Ubuntu 20.04 deb build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Sqlx Schema Check",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_repo / EMF rpms/debs repository creation",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_graphql_api_docs / graphql-api-docs",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Check Graphql schema",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Test Suite",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-toml-doc / exa-toml-doc",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "generate-exa-help-files / Help files build",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Run Fuzz Tests",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / macos14",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Spellcheck",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "emf_cli / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Toml Formatting",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el7",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "Measure Test Coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el8",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "upload_coverage",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / el9",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu20",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / ubuntu22",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "send_emf_manager_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "send_emf_agent_repo_to_gcp",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "build_fnpg_pdf / build-pdf",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / vars",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "exa_base_testing / EXA Testing",
+                conclusion: Unknown,
+            },
+            CheckRun {
+                name: "consolidate_exa_prometheus_service_discovery / consolidate-artifacts",
+                conclusion: Success,
+            },
+            CheckRun {
+                name: "build_gcp_images",
+                conclusion: Skipped,
+            },
+            CheckRun {
+                name: "test_gcp_images",
+                conclusion: Skipped,
+            },
+            StatusContext {
+                context: "codecov/patch",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3553",
+            },
+            StatusContext {
+                context: "codecov/project",
+                state: Success,
+                target_url: "https://codecov.whamcloud.com/gh/whamcloud/exascaler-management-framework/pull/3553",
+            },
+        ],
+    },
+]
