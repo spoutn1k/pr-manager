@@ -6,7 +6,7 @@ pub enum Mergeable {
     Ok,
     #[serde(rename = "CONFLICTING")]
     Conflict,
-    #[serde(untagged)]
+    #[serde(rename = "UNKNOWN")]
     Unknown,
 }
 

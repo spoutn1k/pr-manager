@@ -313,7 +313,7 @@ pub async fn fetch_prs(repo: &str) -> Result<Vec<PullRequest>, Box<dyn std::erro
     let output = AsyncCommand::new("gh")
         .arg("pr")
         .arg("list")
-        .arg("--author")
+        .arg("-a")
         .arg("@me")
         .arg("--json")
         .arg("number,title,mergeable,headRefName,baseRefName,baseRefOid,isDraft,url,statusCheckRollup")
