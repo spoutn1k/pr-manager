@@ -51,10 +51,25 @@ pub struct PullRequest {
 }
 
 impl PullRequest {
-    fn checks_passed(&self) -> bool {
-        self.checks
+    pub fn checks_passed(&self) -> bool {
+        !self
+            .checks
             .iter()
             .any(|c| c.status() == CheckStatus::Failure)
+    }
+
+    pub fn checks_passing(&self) -> usize {
+        self.checks
+            .iter()
+            .filter(|c| c.status() == CheckStatus::Success)
+            .count()
+    }
+
+    pub fn checks_scheduled(&self) -> usize {
+        self.checks
+            .iter()
+            .filter(|c| c.status() != CheckStatus::Skipped)
+            .count()
     }
 }
 

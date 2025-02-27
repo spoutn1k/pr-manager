@@ -94,7 +94,7 @@ where {
         Ok(())
     }
 
-    fn row<'a>(branches: &HashMap<String, String>, pr: &'a PullRequest) -> Row<'a> {
+    fn row<'a>(branches: &HashMap<String, String>, pr: &'a PullRequest, widths: &[u16]) -> Row<'a> {
         // Some(bool) the commit is found and matches or not
         // None the branch is not known
         let commit = branches
@@ -115,9 +115,23 @@ where {
             Cell::from(format!("#{}", pr.number).green())
         };
 
+        let mut check_info = Vec::new();
+
+        if widths[2] > 7 {
+            check_info
+                .push(format!("{}/{} ", pr.checks_passing(), pr.checks_scheduled()).dark_gray())
+        };
+
+        if pr.checks_passed() {
+            check_info.push("✔".green())
+        } else {
+            check_info.push("✘".red())
+        };
+
         Row::new(vec![
             number,
             Cell::from(pr.title.clone()),
+            Cell::from(Line::from(check_info)),
             Cell::from(pr.branch.clone()).style(Style::default().fg(Color::Cyan)),
             mergeable,
         ])
@@ -128,32 +142,37 @@ where {
         terminal: &mut Terminal<impl Backend>,
     ) -> Result<(), Box<dyn std::error::Error>> {
         terminal.draw(|f| {
-            let size = f.area();
-            let chunks = Layout::default()
-                .direction(Direction::Vertical)
-                .constraints([Constraint::Percentage(100)])
-                .split(size);
-
             let branches = self.state.branches.clone();
+
+            let constraints = [
+                Constraint::Min(5),
+                Constraint::Percentage(40),
+                Constraint::Min(1),
+                Constraint::Percentage(40),
+                Constraint::Min(10),
+            ];
+
+            let chunks: Vec<u16> = Layout::default()
+                .direction(Direction::Horizontal)
+                .constraints(constraints)
+                .split(f.area())
+                .iter()
+                .map(|r| r.width)
+                .collect();
+
+            let checks_header = if chunks[2] > 6 { "CHECKS" } else { "" };
+
+            let header = vec!["ID", "NAME", checks_header, "BRANCH", "STATUS"]
+                .into_iter()
+                .map(Cell::from)
+                .collect::<Row>();
 
             let rows = self
                 .state
                 .prs
                 .iter()
-                .map(|pr| Self::row(&branches, pr))
+                .map(|pr| Self::row(&branches, pr, &chunks))
                 .collect::<Vec<_>>();
-
-            let header = vec!["ID", "NAME", "BRANCH", "STATUS"]
-                .into_iter()
-                .map(Cell::from)
-                .collect::<Row>();
-
-            let constraints = [
-                Constraint::Min(5),
-                Constraint::Percentage(40),
-                Constraint::Percentage(40),
-                Constraint::Min(10),
-            ];
 
             let selected_row_style = Style::default().add_modifier(Modifier::REVERSED);
 
@@ -169,7 +188,7 @@ where {
                 .row_highlight_style(selected_row_style)
                 .block(block);
 
-            f.render_stateful_widget(table, chunks[0], &mut self.table_state);
+            f.render_stateful_widget(table, f.area(), &mut self.table_state);
         })?;
 
         Ok(())
@@ -236,7 +255,7 @@ where {
         let repo = self.repo.to_string();
 
         self.tasks.spawn(async move {
-            let prs = fetch_prs(&repo).await.unwrap_or_default();
+            let prs = fetch_prs(&repo).await.unwrap();
             let _ = sender.send(AppEvent::FetchedPRs(prs));
         });
     }
