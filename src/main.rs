@@ -198,7 +198,10 @@ where {
         let url = self.state.prs[selected].url.to_string();
 
         self.tasks.spawn(async move {
+            #[cfg(target_os = "macos")]
             let _ = AsyncCommand::new("open").arg(url).output().await;
+            #[cfg(target_os = "linux")]
+            let _ = AsyncCommand::new("xdg-open").arg(url).output().await;
         });
     }
 
