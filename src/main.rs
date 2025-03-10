@@ -8,7 +8,7 @@ use crossterm::{
 };
 use futures::StreamExt;
 use itertools::Itertools as _;
-use models::{Branch, Mergeable, PullRequest, Repo};
+use models::{Branch, CheckProgress, Mergeable, PullRequest, Repo};
 use ratatui::{
     prelude::*,
     widgets::{Block, Cell, Row, Table, TableState},
@@ -122,10 +122,10 @@ where {
                 .push(format!("{}/{} ", pr.checks_passing(), pr.checks_scheduled()).dark_gray())
         };
 
-        if pr.checks_passed() {
-            check_info.push("✔".green())
-        } else {
-            check_info.push("✘".red())
+        match pr.check_status() {
+            CheckProgress::Success => check_info.push("✔".green()),
+            CheckProgress::Failure => check_info.push("✘".red()),
+            CheckProgress::Pending => check_info.push("•".yellow()),
         };
 
         Row::new(vec![

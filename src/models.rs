@@ -50,25 +50,44 @@ pub struct PullRequest {
     pub checks: Vec<CheckData>,
 }
 
+pub enum CheckProgress {
+    Pending,
+    Success,
+    Failure,
+}
+
 impl PullRequest {
-    pub fn checks_passed(&self) -> bool {
-        !self
-            .checks
-            .iter()
-            .any(|c| c.status() == CheckStatus::Failure)
+    pub fn check_status(&self) -> CheckProgress {
+        let mut pending = 0;
+
+        for check in &self.checks {
+            if check.verdict() == CheckConclusion::Failure {
+                return CheckProgress::Failure;
+            }
+
+            if let CheckStatus::InProgress | CheckStatus::Queued = check.state() {
+                pending += 1;
+            }
+        }
+
+        if pending > 0 {
+            CheckProgress::Pending
+        } else {
+            CheckProgress::Success
+        }
     }
 
     pub fn checks_passing(&self) -> usize {
         self.checks
             .iter()
-            .filter(|c| c.status() == CheckStatus::Success)
+            .filter(|c| c.verdict() == CheckConclusion::Success)
             .count()
     }
 
     pub fn checks_scheduled(&self) -> usize {
         self.checks
             .iter()
-            .filter(|c| c.status() != CheckStatus::Skipped)
+            .filter(|c| c.verdict() != CheckConclusion::Skipped)
             .count()
     }
 }
@@ -97,7 +116,7 @@ pub struct Repo {
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq)]
-pub enum CheckStatus {
+pub enum CheckConclusion {
     #[serde(rename = "SUCCESS")]
     Success,
     #[serde(rename = "FAILURE")]
@@ -108,16 +127,27 @@ pub enum CheckStatus {
     Unknown,
 }
 
+#[derive(Debug, Deserialize, Serialize, Clone, PartialEq)]
+pub enum CheckStatus {
+    #[serde(rename = "COMPLETED")]
+    Completed,
+    #[serde(rename = "IN_PROGRESS")]
+    InProgress,
+    #[serde(rename = "QUEUED")]
+    Queued,
+}
+
 #[derive(Debug, Deserialize, Serialize, Clone)]
 #[serde(tag = "__typename")]
 pub enum CheckData {
     CheckRun {
         name: String,
-        conclusion: CheckStatus,
+        conclusion: CheckConclusion,
+        status: CheckStatus,
     },
     StatusContext {
         context: String,
-        state: CheckStatus,
+        state: CheckConclusion,
         #[serde(rename = "targetUrl")]
         target_url: String,
     },
@@ -131,10 +161,17 @@ impl CheckData {
         }
     }
 
-    pub fn status(&self) -> CheckStatus {
+    pub fn verdict(&self) -> CheckConclusion {
         match self {
             CheckData::CheckRun { conclusion, .. } => conclusion.clone(),
             CheckData::StatusContext { state, .. } => state.clone(),
+        }
+    }
+
+    pub fn state(&self) -> CheckStatus {
+        match self {
+            CheckData::CheckRun { status, .. } => status.clone(),
+            CheckData::StatusContext { .. } => CheckStatus::Completed,
         }
     }
 }
