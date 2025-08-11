@@ -123,6 +123,8 @@ pub enum CheckConclusion {
     Failure,
     #[serde(rename = "SKIPPED")]
     Skipped,
+    #[serde(rename = "CANCELLED")]
+    Cancelled,
     #[serde(rename = "")]
     Unknown,
 }
